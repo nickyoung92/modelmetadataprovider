@@ -1,0 +1,77 @@
+spec:
+  alerts:
+    - rule: DEPLOYMENT_FAILED
+    - rule: DOMAIN_FAILED
+  name: safe-nft-metadata-provider
+  region: fra
+  workers:
+    - environment_slug: node-js
+      envs:
+        - key: RPC_ENDPOINT
+          scope: RUN_TIME
+          value: https://mainnet.infura.io/v3/YOUR_PROJECT_ID_HERE
+        - key: CONTRACT_ADDRESS
+          scope: RUN_TIME
+          value: 0xYOUR_CONTRACT_ADDRESS
+        - key: START_TOKEN_ID
+          scope: RUN_TIME
+          value: '1'
+
+        - key: PRIVATE_ASSETS_PATH
+          scope: RUN_TIME
+          value: /private/assets
+        - key: PUBLIC_ASSETS_PATH
+          scope: RUN_TIME
+          value: /public/assets
+        - key: ASSETS_EXTENSION
+          scope: RUN_TIME
+          value: .png
+          
+        - key: PRIVATE_MODELS_PATH
+          scope: RUN_TIME
+          value: /private/models
+        - key: PUBLIC_MODELS_PATH
+          scope: RUN_TIME
+          value: /public/models
+        - key: MODELS_EXTENSION
+          scope: RUN_TIME
+          value: .glb
+
+        - key: PRIVATE_METADATA_PATH
+          scope: RUN_TIME
+          value: /private/metadata
+        - key: PUBLIC_METADATA_PATH
+          scope: RUN_TIME
+          value: /public/metadata
+
+        - key: PUBLIC_ASSETS_URI_TEMPLATE
+          scope: RUN_TIME
+          value: https://fra1.digitaloceanspaces.com/my-bucket/public/assets/{{TOKEN_ID}}.png
+
+        - key: S3_ACCESS_KEY
+          scope: RUN_TIME
+          value: YOUR_ACCESS_KEY
+        - key: S3_SECRET_KEY
+          scope: RUN_TIME
+          value: YOUR_SECRET_KEY
+        - key: S3_ENDPOINT_URL
+          scope: RUN_TIME
+          value: https://fra1.digitaloceanspaces.com
+        - key: S3_BUCKET_NAME
+          scope: RUN_TIME
+          value: my-bucket
+        - key: S3_PATH_PREFIX
+          scope: RUN_TIME
+
+        - key: FULL_REFRESH_DELAY
+          scope: RUN_TIME
+          value: '3600'
+      git:
+        branch: 2.x
+        repo_clone_url: https://github.com/hashlips-lab/safe-nft-metadata-provider.git
+      instance_count: 1
+      instance_size_slug: basic-xxs
+      name: metadata-provider
+      build_command: yarn build
+      run_command: yarn start
+      source_dir: /
