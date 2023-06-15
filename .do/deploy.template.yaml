@@ -36,6 +36,16 @@ spec:
         - key: MODELS_EXTENSION
           scope: RUN_TIME
           value: .glb
+          
+        - key: PRIVATE_BACKGROUNDS_PATH
+          scope: RUN_TIME
+          value: /private/backgrounds
+        - key: PUBLIC_BACKGROUNDS_PATH
+          scope: RUN_TIME
+          value: /public/backgrounds
+        - key: BACKGROUNDS_EXTENSION
+          scope: RUN_TIME
+          value: .png
 
         - key: PRIVATE_METADATA_PATH
           scope: RUN_TIME
