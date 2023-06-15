@@ -31,6 +31,7 @@ export const config = {
   PRIVATE_MODELS_PATH: getEnvironmentVariable("PRIVATE_MODELS_PATH"),
   PUBLIC_MODELS_PATH: getEnvironmentVariable("PUBLIC_MODELS_PATH"),
   MODELS_EXTENSION: getEnvironmentVariable("MODELS_EXTENSION"),
+  BACKGROUNDS_EXTENSION: getEnvironmentVariable("BACKGROUNDS_EXTENSION"),
   PRIVATE_METADATA_PATH: getEnvironmentVariable("PRIVATE_METADATA_PATH"),
   PUBLIC_METADATA_PATH: getEnvironmentVariable("PUBLIC_METADATA_PATH"),
   PUBLIC_ASSETS_URI_TEMPLATE: getEnvironmentVariable("PUBLIC_ASSETS_URI_TEMPLATE"),
