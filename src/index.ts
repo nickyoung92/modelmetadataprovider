@@ -51,6 +51,13 @@ const collectionDataUpdater = new CollectionDataUpdater(
       config.PUBLIC_MODELS_PATH,
       config.MODELS_EXTENSION,
     ),
+    new S3BasicFileDataUpdater(
+      "Background",
+      s3Config,
+      config.PRIVATE_BACKGROUNDS_PATH,
+      config.PUBLIC_BACKGROUNDS_PATH,
+      config.BACKGROUNDS_EXTENSION,
+    ),
     new S3BasicNftMetadataDataUpdater(
       "Metadata",
       s3Config,
